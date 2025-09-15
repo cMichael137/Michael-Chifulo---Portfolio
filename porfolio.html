@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Chifulo - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .skill-bar {
+            transition: width 2s ease-in-out;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #667eea;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-gray-800">Michael Chifulo</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-600 hover:text-gray-800"><strong>Home</strong></a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-gray-800"><strong>About</strong></a>
+                    <a href="#projects" class="nav-link text-gray-600 hover:text-gray-800"><strong>Projects</strong></a>
+                    <a href="#skills" class="nav-link text-gray-600 hover:text-gray-800"><strong>Skills</strong></a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-gray-800"><strong>Contact</strong></a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-gray-600 hover:text-gray-800">Home</a>
+                <a href="#about" class="block py-2 text-gray-600 hover:text-gray-800">About</a>
+                <a href="#projects" class="block py-2 text-gray-600 hover:text-gray-800">Projects</a>
+                <a href="#skills" class="block py-2 text-gray-600 hover:text-gray-800">Skills</a>
+                <a href="#contact" class="block py-2 text-gray-600 hover:text-gray-800">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center text-white">
+        <div class="text-center px-6">
+            <div class="w-32 h-32 mx-auto mb-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-6xl">
+                <img src="MC ID.jpg">
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 fade-in">Michael Chifulo</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 fade-in">Muilti Media Designer,Writer & Developer</p>
+            <div class="space-x-4 fade-in">
+                <button onclick="scrollToSection('projects')" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+                    View My Work
+                </button>
+                <button onclick="scrollToSection('contact')" class="border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition duration-300">
+                    Get In Touch
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 fade-in">About Me</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto fade-in"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="w-80 h-80 mx-auto bg-gradient-to-br from-purple-400 to-blue-500 rounded-2xl flex items-center justify-center text-8xl">
+                        <img src="prop.JPG">
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Multimedia designer with 5+ Years Experience</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        I am a passionate multimedia designer who creates engaging visual and interactive content by combining graphic design, animation, video, and digital media. I use my creativity and technical skills to develop designs for websites, mobile apps, social media, advertisements, and presentations. I enjoy blending text, images, sound, and motion to communicate messages effectively and capture attention. I continuously stay up to date with design trends, tools, and technologies to produce fresh and innovative content. I am open to collaborations for the purpose of bringing ideas to life. I pay close attention to detail, ensuring that every project reflects both artistic quality and brand consistency. Above all, my passion drives me to transform concepts into impactful digital experiences that inspire and connect with audiences.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        When I'm not coding, you'll find me exploring new technologies, contributing to open-source 
+                        projects, or enjoying a good cup of coffee while sketching out my next big idea.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">Problem Solver</span>
+                        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">Team Player</span>
+                        <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">Continuous Learner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 fade-in">Featured Projects</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto fade-in"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-red-500 relative overflow-hidden">
+                        <img src="sBd.jpg">
+                        <!--<svg class="w-full h-full object-cover" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">-->
+                            <defs>
+                                <linearGradient id="ecommerce-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff6b6b"/>
+                                    <stop offset="100%" style="stop-color:#4ecdc4"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="200" fill="url(#ecommerce-bg)"/>
+                            <!-- Shopping cart icon -->
+                            <rect x="150" y="60" width="100" height="80" rx="8" fill="white" opacity="0.9"/>
+                            <circle cx="170" cy="120" r="8" fill="#ff6b6b"/>
+                            <circle cx="230" cy="120" r="8" fill="#ff6b6b"/>
+                            <rect x="160" y="70" width="70" height="4" fill="#ff6b6b"/>
+                            <rect x="160" y="80" width="50" height="4" fill="#ff6b6b"/>
+                            <rect x="160" y="90" width="60" height="4" fill="#ff6b6b"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Same But Different Video</h3>
+                        <p class="text-gray-600 mb-4">A poetic video deliverying accompaning the punchlines of a poem with captivating images</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Canva</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">PowerDirector</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Capcut</span>
+                        </div>
+                        <a href="sameButdiffVid.mp4"><button class="text-purple-600 font-semibold hover:text-purple-800 transition duration-300">
+                            Watch Video →
+                        </button></a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 relative overflow-hidden">
+                        <img src="WiaW.jpg">
+                        <!--<svg class="w-full h-full object-cover" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">-->
+                            <defs>
+                                <linearGradient id="task-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#667eea"/>
+                                    <stop offset="100%" style="stop-color:#764ba2"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="200" fill="url(#task-bg)"/>
+                            <!-- Task list mockup -->
+                            <rect x="80" y="40" width="240" height="120" rx="12" fill="white" opacity="0.95"/>
+                            <rect x="100" y="60" width="200" height="8" rx="4" fill="#667eea"/>
+                            <rect x="100" y="80" width="160" height="8" rx="4" fill="#667eea" opacity="0.6"/>
+                            <rect x="100" y="100" width="180" height="8" rx="4" fill="#667eea" opacity="0.8"/>
+                            <rect x="100" y="120" width="140" height="8" rx="4" fill="#667eea" opacity="0.4"/>
+                            <circle cx="90" cy="64" r="4" fill="#4ecdc4"/>
+                            <circle cx="90" cy="84" r="4" fill="#ff6b6b"/>
+                            <circle cx="90" cy="104" r="4" fill="#4ecdc4"/>
+                            <circle cx="90" cy="124" r="4" fill="#feca57"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Who Is A Woman</h3>
+                        <p class="text-gray-600 mb-4">A video that looks into how we view our women answering what they bring to the table</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">PowerDirector</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Adobe Premier Pro</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">VN</span>
+                        </div>
+                        <a href="Who Is A Woman.mp4" target="_blank" class="text-purple-600 font-semibold hover:text-purple-800 transition duration-300 inline-flex items-center">
+                            Watch  Video →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 relative overflow-hidden">
+                        <img src="bKthins.jpg">
+                        <!--<svg class="w-full h-full object-cover" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">-->
+                            <defs>
+                                <linearGradient id="analytics-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#48c6ef"/>
+                                    <stop offset="100%" style="stop-color:#6f86d6"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="200" fill="url(#analytics-bg)"/>
+                            <!-- Dashboard mockup -->
+                            <rect x="60" y="30" width="280" height="140" rx="8" fill="white" opacity="0.95"/>
+                            <!-- Chart bars -->
+                            <rect x="80" y="120" width="20" height="40" fill="#4ecdc4"/>
+                            <rect x="110" y="100" width="20" height="60" fill="#ff6b6b"/>
+                            <rect x="140" y="110" width="20" height="50" fill="#feca57"/>
+                            <rect x="170" y="90" width="20" height="70" fill="#4ecdc4"/>
+                            <rect x="200" y="105" width="20" height="55" fill="#ff6b6b"/>
+                            <!-- Pie chart -->
+                            <circle cx="280" cy="90" r="25" fill="#4ecdc4" opacity="0.8"/>
+                            <path d="M 280 65 A 25 25 0 0 1 305 90 L 280 90 Z" fill="#ff6b6b"/>
+                            <path d="M 305 90 A 25 25 0 0 1 290 113 L 280 90 Z" fill="#feca57"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Broken Things</h3>
+                        <p class="text-gray-600 mb-4">A video that looks into depressive situations dealt with in society and the amazing Christ comeback</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Capcut</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Picsart</span>
+                            <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs">Powerdirector</span>
+                        </div>
+                        <a href="brokThingsvid.mp4" target="_blank" class="text-purple-600 font-semibold hover:text-purple-800 transition duration-300 inline-flex items-center">
+                            Watch Video →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <!--pictures-->
+        <div class="max-w-6xl mx-auto px-6">
+            <!--<div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 fade-in">Featured Projects</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto fade-in"></div>
+            </div>-->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-red-500 relative overflow-hidden">
+                        <img src="bkcov.jpg">
+                        <!--<svg class="w-full h-full object-cover" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">-->
+                            <defs>
+                                <linearGradient id="ecommerce-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff6b6b"/>
+                                    <stop offset="100%" style="stop-color:#4ecdc4"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="200" fill="url(#ecommerce-bg)"/>
+                            <!-- Shopping cart icon -->
+                            <rect x="150" y="60" width="100" height="80" rx="8" fill="white" opacity="0.9"/>
+                            <circle cx="170" cy="120" r="8" fill="#ff6b6b"/>
+                            <circle cx="230" cy="120" r="8" fill="#ff6b6b"/>
+                            <rect x="160" y="70" width="70" height="4" fill="#ff6b6b"/>
+                            <rect x="160" y="80" width="50" height="4" fill="#ff6b6b"/>
+                            <rect x="160" y="90" width="60" height="4" fill="#ff6b6b"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Booklet Cover</h3>
+                        <p class="text-gray-600 mb-4">A booklet cover I designed for Teachers Union's quadrennial conference</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Canva</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">PowerDirector</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Capcut</span>
+                        </div>
+                        <a href="bkcov.jpg"><button class="text-purple-600 font-semibold hover:text-purple-800 transition duration-300">
+                            View →
+                        </button></a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 relative overflow-hidden">
+                        <img src="tkt.jpg">
+                        <!--<svg class="w-full h-full object-cover" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">-->
+                            <defs>
+                                <linearGradient id="task-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#667eea"/>
+                                    <stop offset="100%" style="stop-color:#764ba2"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="200" fill="url(#task-bg)"/>
+                            <!-- Task list mockup -->
+                            <rect x="80" y="40" width="240" height="120" rx="12" fill="white" opacity="0.95"/>
+                            <rect x="100" y="60" width="200" height="8" rx="4" fill="#667eea"/>
+                            <rect x="100" y="80" width="160" height="8" rx="4" fill="#667eea" opacity="0.6"/>
+                            <rect x="100" y="100" width="180" height="8" rx="4" fill="#667eea" opacity="0.8"/>
+                            <rect x="100" y="120" width="140" height="8" rx="4" fill="#667eea" opacity="0.4"/>
+                            <circle cx="90" cy="64" r="4" fill="#4ecdc4"/>
+                            <circle cx="90" cy="84" r="4" fill="#ff6b6b"/>
+                            <circle cx="90" cy="104" r="4" fill="#4ecdc4"/>
+                            <circle cx="90" cy="124" r="4" fill="#feca57"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Ticket</h3>
+                        <p class="text-gray-600 mb-4">A design for a ticket of an African traditional themed women's conference</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">PowerDirector</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Adobe Premier Pro</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">VN</span>
+                        </div>
+                        <a href="tkt.jpg" target="_blank" class="text-purple-600 font-semibold hover:text-purple-800 transition duration-300 inline-flex items-center">
+                            View →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 relative overflow-hidden">
+                        <img src="flyer.jpg">
+                        <!--<svg class="w-full h-full object-cover" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">-->
+                            <defs>
+                                <linearGradient id="analytics-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#48c6ef"/>
+                                    <stop offset="100%" style="stop-color:#6f86d6"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="400" height="200" fill="url(#analytics-bg)"/>
+                            <!-- Dashboard mockup -->
+                            <rect x="60" y="30" width="280" height="140" rx="8" fill="white" opacity="0.95"/>
+                            <!-- Chart bars -->
+                            <rect x="80" y="120" width="20" height="40" fill="#4ecdc4"/>
+                            <rect x="110" y="100" width="20" height="60" fill="#ff6b6b"/>
+                            <rect x="140" y="110" width="20" height="50" fill="#feca57"/>
+                            <rect x="170" y="90" width="20" height="70" fill="#4ecdc4"/>
+                            <rect x="200" y="105" width="20" height="55" fill="#ff6b6b"/>
+                            <!-- Pie chart -->
+                            <circle cx="280" cy="90" r="25" fill="#4ecdc4" opacity="0.8"/>
+                            <path d="M 280 65 A 25 25 0 0 1 305 90 L 280 90 Z" fill="#ff6b6b"/>
+                            <path d="M 305 90 A 25 25 0 0 1 290 113 L 280 90 Z" fill="#feca57"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Announcement Flyer</h3>
+                        <p class="text-gray-600 mb-4">A flyer designed for announcing an upcoming event and location</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Capcut</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Picsart</span>
+                            <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs">Powerdirector</span>
+                        </div>
+                        <a href="flyer.jpg" target="_blank" class="text-purple-600 font-semibold hover:text-purple-800 transition duration-300 inline-flex items-center">
+                            View →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 fade-in">Skills & Expertise</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto fade-in"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8">Technical Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">HTML & CSS</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-purple-600 h-2 rounded-full" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">PowerDirector</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-blue-600 h-2 rounded-full" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">CANVA</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-green-600 h-2 rounded-full" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">UI/UX Design</span>
+                                <span class="text-gray-500">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-pink-600 h-2 rounded-full" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8">Tools & Technologies</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="text-3xl mb-2"><img src="capcut_symbol.jpeg"></div>
+                            <span class="text-gray-700 font-medium">Capcut</span>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="text-3xl mb-2"><img src="powerdirector_symbol.jpeg"></div>
+                            <span class="text-gray-700 font-medium">Powerdirector</span>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="text-3xl mb-2"><img src="microsoft_office_symbol.jpeg"></div>
+                            <span class="text-gray-700 font-medium">Microsoft Office</span>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="text-3xl mb-2"><img src="php.jpg"></div>
+                            <span class="text-gray-700 font-medium">PHP</span>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="text-3xl mb-2"><img src="c_programming_symbol.jpeg"></div>
+                            <!--<span class="text-gray-700 font-medium">C Programming</span>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="text-3xl mb-2"><img src="htmlcss.jpg"></div>-->
+                            <!--<span class="text-gray-700 font-medium">HTML & CSS</span>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                            <div class="text-3xl mb-2"><img src="mysql.jpg"></div>
+                            <span class="text-gray-700 font-medium">MYSQL</span>-->
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 fade-in">Let's Work Together</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto fade-in"></div>
+                <p class="text-gray-600 mt-6 fade-in">Have a project in mind? I'd love to hear about it!</p>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Get In Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-6 bg-white p-6 rounded-xl shadow-lg">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 text-2xl">
+                                📧
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800 text-lg">Email</p>
+                                <p class="text-gray-600">chifulomichael137@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-6 bg-white p-6 rounded-xl shadow-lg">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl">
+                                💼
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800 text-lg">LinkedIn</p>
+                                <p class="text-gray-600">http://linkedin.com/in/michael-chifulo-56b666292</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-6 bg-white p-6 rounded-xl shadow-lg">
+                            <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 text-2xl">
+                                <img src="call_icon.jpeg">
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800 text-lg">Contact</p>
+                                <p class="text-gray-600">+260 774510081</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-gray-400">&copy; 2025 Michael Chifulo. All rights reserved.</p>
+            <p class="text-gray-500 mt-2">Built with passion and lots of coffee ☕</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Add click handlers to navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate skill bars when skills section is visible
+                    if (entry.target.closest('#skills')) {
+                        setTimeout(() => {
+                            const skillBars = entry.target.querySelectorAll('.skill-bar');
+                            skillBars.forEach(bar => {
+                                const width = bar.getAttribute('data-width');
+                                bar.style.width = width;
+                            });
+                        }, 300);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+
+
+        // Add some initial animations
+        window.addEventListener('load', () => {
+            // Trigger initial fade-ins for hero section
+            setTimeout(() => {
+                document.querySelectorAll('#home .fade-in').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 200);
+                });
+            }, 500);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97d7bc0884dd0de1',t:'MTc1NzU5OTY3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
